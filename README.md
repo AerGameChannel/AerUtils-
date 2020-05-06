@@ -29,6 +29,8 @@ An WW_SYSTEM plugin for SCP:SL, that have very big count of functions
 | lo [time in seconds] | Disables lights in the facility for N time (in seconds) |
 
 # BreakDoors Configs
+| Option | Type | Default Value | Description |
+| --- | --- | --- | --- |
 | aerutils_breakdoors_enable | Bool | true | Enables/Disabled BreakDoors |
 
 # BreakDoors Commands
