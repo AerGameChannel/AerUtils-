@@ -80,7 +80,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventHandler.cs" />
+    <Compile Include="BreakDoorsEventHandler.cs" />
+    <Compile Include="JBCEventHandler.cs" />
+    <Compile Include="LightsOffEventHandler.cs" />
+    <Compile Include="PersonalBCEventHandler.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
