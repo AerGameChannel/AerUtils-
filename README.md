@@ -6,6 +6,13 @@ An WW_SYSTEM plugin for SCP:SL, that have very big count of functions
 | --- | --- | --- | --- |
 | aerutils_enable | Bool | true | Enables/Disables the plugin |
 
+# Personal Broadcast Commands
+| Command | Description |
+| --- | --- |
+| pbc | Shows usage of command |
+| pbc help | Shows usage of command |
+| pbc [RA Player id] [time in seconds] [text] | Sends Personal Broadcast for player |
+
 # Join Broadcasts Config
 | Option | Type | Default Value | Description |
 | --- | --- | --- | --- |
