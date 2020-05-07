@@ -27,10 +27,12 @@ namespace AerUtils
             if (!utilsenable) return;
             this.Info(this.Details.name + " has loaded");
         }
-
         public override void Register()
         {
-            AddEventHandlers(new EventHandler(this));
+            AddEventHandlers(new PersonalBCEventHandler(this));
+            AddEventHandlers(new LightsOffEventHandler(this));
+            AddEventHandlers(new JBCEventHandler(this));
+            AddEventHandlers(new BreakDoorsEventHandler(this));
         }
     }
 }
