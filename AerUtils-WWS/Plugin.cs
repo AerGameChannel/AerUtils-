@@ -1,4 +1,4 @@
-﻿using WW_SYSTEM;
+using WW_SYSTEM;
 using WW_SYSTEM.Attributes;
 
 namespace AerUtils
@@ -9,7 +9,7 @@ namespace AerUtils
         description = "AerUtils",
         id = "aerutils.plugin",
         configPrefix = "AerUtils",
-        version = "1.0",
+        version = "1.1.0",
         WWSYSTEMMajor = 6,
         WWSYSTEMMinor = 3,
         WWSYSTEMRevision = 1
