@@ -13,7 +13,6 @@ An WW_SYSTEM plugin for SCP:SL, that have very big count of functions
 | aerutils_randomlo_delay_max | 60 | Int | Max time to wait before next lightsoff
 | aerutils_lo_cassie | Warning . Generator malfunction detected | string | LightsOff CASSIE message
 | aerutils_breakdoors_enable | Bool | true | Enables/Disabled BreakDoors |
-
 # Commands
 | Command | Description |
 | --- | --- |
