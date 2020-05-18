@@ -69,7 +69,7 @@ namespace AerUtils
                                 {
                                     foreach (Ragdoll doll in Object.FindObjectsOfType<Ragdoll>())
                                     {
-                                        NetworkServer.Destroy(doll.gameObject);
+                                        NetworkServer.Destroy(doll.gameObject); // Destroy all ragdolls
                                     }
 
                                     ev.Output = "AerUtils_Cleanup#Done! Cleaned up ragdolls";
@@ -82,7 +82,7 @@ namespace AerUtils
                                 {
                                     foreach (Pickup item in Object.FindObjectsOfType<Pickup>())
                                     {
-                                        NetworkServer.Destroy(item.gameObject);
+                                        NetworkServer.Destroy(item.gameObject); // Destroy all items
                                     }
 
                                     ev.Output = "AerUtils_Cleanup#Done! Cleaned up items";
@@ -94,13 +94,13 @@ namespace AerUtils
                                 {
                                     foreach (Pickup item in Object.FindObjectsOfType<Pickup>())
                                     {
-                                        NetworkServer.Destroy(item.gameObject);
+                                        NetworkServer.Destroy(item.gameObject); // 
                                     }
                                     foreach (Ragdoll doll in Object.FindObjectsOfType<Ragdoll>())
                                     {
                                         NetworkServer.Destroy(doll.gameObject);
                                     }
-
+                                    // ^ Destroy all items and ragdolls
                                     ev.Output = "AerUtils_Cleanup#Done! Cleaned up all";
                                     ev.Successful = true;
                                     ev.Handled = true;
