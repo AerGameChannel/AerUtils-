@@ -75,7 +75,7 @@ namespace AerUtils
                                     IEnumerable<string> thing = array.Skip(3);
                                     string msg = "";
                                     foreach (string s in thing) msg += $"{s} ";
-                                    pl.PersonalBroadcast(msg, Convert.ToUInt32(array[2]), false); // Send personal broadcast to player
+                                    pl.PersonalBroadcast(msg, Convert.ToUInt32(array[2]), false); //  Send personal broadcast to player
 
                                     ev.Output = "AerUtils_PersonalBC#Done!";
                                     ev.Successful = true;
