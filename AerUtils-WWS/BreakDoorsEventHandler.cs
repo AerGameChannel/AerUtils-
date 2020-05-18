@@ -63,18 +63,18 @@ namespace AerUtils
                                 int id = int.Parse(array[1]);
 
                                 Player pl = Server.Round.FindPlayerWithId(id);
-                                if (pl != null && !pl.BreakDoors)
+                                if (pl != null && !pl.BreakDoors) // If player isn't null and he doesn't have turned on breakdoors
                                 {
-                                    pl.BreakDoors = true;
+                                    pl.BreakDoors = true; // Enable breakdoors
 
                                     ev.Output = "AerUtils_BreakDoors#Enabled BreakDoors for player " + pl.Nick;
                                     ev.Successful = true;
                                     ev.Handled = true;
                                     return;
                                 }
-                                else if (pl != null && pl.BreakDoors)
+                                else if (pl != null && pl.BreakDoors) // If player isn't null and he have turned on breakdoors
                                 {
-                                    pl.BreakDoors = false;
+                                    pl.BreakDoors = false; // Disable breakdoors
 
                                     ev.Output = "AerUtils_BreakDoors#Disabled BreakDoors for player " + pl.Nick;
                                     ev.Successful = true;
