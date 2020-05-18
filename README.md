@@ -17,17 +17,9 @@ An WW_SYSTEM plugin for SCP:SL, that have very big count of functions
 # Commands
 | Command | Description |
 | --- | --- |
-| pbc | Shows usage of command |
-| pbc help | Shows usage of command |
 | pbc [RA Player id] [time in seconds] [text] | Sends Personal Broadcast for player |
-| lights | Shows usage of command |
-| lo | Shows usage of command |
-| lights help | Shows usage of command |
-| lo help | Shows usage of command |
 | lights [time in seconds] | Disables lights in the facility for N time (in seconds) |
 | lo [time in seconds] | Disables lights in the facility for N time (in seconds) |
-| bd | Shows usage of command |
-| bd help | Shows usage of command |
 | bd [RA Player id] | Enables/Disabled BreakDoors mode for player |
 | killall | Kills everyone on server |
 | size [RA player id] [x] [y] [z] | Changes player's size |
