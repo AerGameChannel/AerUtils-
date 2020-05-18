@@ -65,7 +65,7 @@ namespace AerUtils
                             {
                                 int.TryParse(array[1], out int lotime);
 
-                                Server.Round.EnableFlickering(lotime, false);
+                                Server.Round.EnableFlickering(lotime, false); // Turn off the lights
 
                                 ev.Output = "AerUtils_LightsOff#Turned off the lights ";
                                 ev.Successful = true;
