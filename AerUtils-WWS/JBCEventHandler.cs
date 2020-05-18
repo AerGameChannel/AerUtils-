@@ -20,8 +20,8 @@ namespace AerUtils
             var aerutils_jbc = plugin.Config.GetBool("aerutils_jbc_enable", true);
             if (!aerutils_jbc) return;
             var bctime = plugin.Config.GetUInt("aerutils_jbc_time", 15);
-            var bcmsg = plugin.Config.GetString("aerutils_jbc_message", "Welcome to the server!");
-            ev.Player.PersonalBroadcast(bcmsg, bctime, false);
+            var bcmsg = plugin.Config.GetString("aerutils_jbc_message", "Welcome to the server!"); 
+            ev.Player.PersonalBroadcast(bcmsg, bctime, false); // Send join broadcast to player
         }
     }
 }
