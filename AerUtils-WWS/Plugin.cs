@@ -29,14 +29,14 @@ namespace AerUtils
         }
         public override void Register()
         {
-            AddEventHandlers(new PersonalBCEventHandler(this));
-            AddEventHandlers(new LightsOffEventHandler(this));
-            AddEventHandlers(new JBCEventHandler(this));
-            AddEventHandlers(new BreakDoorsEventHandler(this));
-            AddEventHandlers(new OtherFunctions(this));
-            AddEventHandlers(new SizeChangeEventHandler(this));
-            AddEventHandlers(new CleanupEventHandler(this));
-            AddEventHandlers(new InstaKillEventHandler(this));
+            AddEventHandlers(new PersonalBCEventHandler(this)); // Loads PersonalBC EventHandler
+            AddEventHandlers(new LightsOffEventHandler(this)); // Loads LightsOff EventHandler
+            AddEventHandlers(new JBCEventHandler(this)); // Loads JoinBC EventHandler
+            AddEventHandlers(new BreakDoorsEventHandler(this)); // Loads BreakDoors EventHandler
+            AddEventHandlers(new OtherFunctions(this)); // Loads OtherFunctions EventHandler
+            AddEventHandlers(new SizeChangeEventHandler(this)); // Loads SizeChange EventHandler
+            AddEventHandlers(new CleanupEventHandler(this)); // Loads Cleanup EventHandler
+            AddEventHandlers(new InstaKillEventHandler(this)); // Loads InstaKill EventHandler
         }
     }
 }
