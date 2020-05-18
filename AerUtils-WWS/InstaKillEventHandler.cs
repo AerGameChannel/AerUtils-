@@ -62,7 +62,7 @@ namespace AerUtils
                                 Player pl = Server.Round.FindPlayerWithId(id);
                                 if (pl != null)
                                 {
-                                    pl.Kill(DamageTypes.None);
+                                    pl.Kill(DamageTypes.None); // Kill player instantly
 
                                     ev.Output = "AerUtils_InstaKill#Instantly killed player  " + pl.Nick;
                                     ev.Successful = true;
