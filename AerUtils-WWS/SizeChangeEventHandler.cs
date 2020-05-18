@@ -71,7 +71,7 @@ namespace AerUtils
 
                                 if (pl != null)
                                 {
-                                    pl.SetPlayerScale(size_x, size_y, size_z);
+                                    pl.SetPlayerScale(size_x, size_y, size_z); // Set size for player
 
                                     ev.Output = "AerUtils_Size#Set custom size for player " + pl.Nick;
                                     ev.Successful = true;
@@ -92,7 +92,7 @@ namespace AerUtils
                                     ev.Handled = true;
                                     return;
                                 }
-                                if (id == false)
+                                if (id == false) // If player id is invalid
                                 {
                                     ev.Output = "Please, enter valid player id!";
                                     ev.Successful = false;
