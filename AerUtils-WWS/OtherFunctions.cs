@@ -35,9 +35,9 @@ namespace AerUtils
                     }
                     else
                     {
-                        foreach (Player player in Server.Round.GetPlayers().Where(player => player != null || player.GetClassName != "Spectator"))
+                        foreach (Player player in Server.Round.GetPlayers().Where(player => player != null || player.GetClassName != "Spectator")) // For every player on server
                         {
-                            player.Kill(DamageTypes.None);
+                            player.Kill(DamageTypes.None); // Kill player
                         }
                         ev.Output = "AerUtils_KillAll#Killed everything alive (and dead) in the facility";
                         ev.Successful = true;
