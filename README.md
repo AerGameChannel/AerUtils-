@@ -8,9 +8,9 @@ An WW_SYSTEM plugin for SCP:SL, that have very big count of functions
 | aerutils_jbc_enable | Bool | true | Enables/Disables join broadcasts |
 | aerutils_jbc_message | String | Welcome to the server! | Join broadcast message |
 | aerutils_jbc_time | UInt | 15 | Join broadcast time |
-| aerutils_randomlo_delay_min | 30 | Int | Min time to wait before next lightsoff
-| aerutils_randomlo_delay_max | 60 | Int | Max time to wait before next lightsoff
-| aerutils_lo_cassie | Warning . Generator malfunction detected | string | LightsOff CASSIE message
+| aerutils_randomlo_delay_min | Int | 30 | Min time to wait before next lightsoff
+| aerutils_randomlo_delay_max | Int | 60 | Max time to wait before next lightsoff
+| aerutils_lo_cassie | string | Warning . Generator malfunction detected | LightsOff CASSIE message
 | aerutils_lo_enable| Bool | true | Enables/Disables LightsOff |
 | aerutils_breakdoors_enable | Bool | true | Enables/Disabled BreakDoors |
 
