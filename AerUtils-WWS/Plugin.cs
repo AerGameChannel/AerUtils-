@@ -1,4 +1,4 @@
-using WW_SYSTEM;
+﻿using WW_SYSTEM;
 using WW_SYSTEM.Attributes;
 
 namespace AerUtils
@@ -9,7 +9,7 @@ namespace AerUtils
         description = "AerUtils",
         id = "aerutils.plugin",
         configPrefix = "AerUtils",
-        version = "1.1.0",
+        version = "2.0.0",
         WWSYSTEMMajor = 6,
         WWSYSTEMMinor = 3,
         WWSYSTEMRevision = 1
@@ -18,12 +18,12 @@ namespace AerUtils
     {
         public override void OnDisable()
         {
-            this.Info(this.Details.name + "AerUtils was disabled");
+            this.Info(this.Details.name + " was disabled");
         }
 
         public override void OnEnable()
         {
-            bool utilsenable = this.Config.GetBool("aerutils_enable", true);
+            var utilsenable = this.Config.GetBool("aerutils_enable", true);
             if (!utilsenable) return;
             this.Info(this.Details.name + " has loaded");
         }
@@ -33,6 +33,10 @@ namespace AerUtils
             AddEventHandlers(new LightsOffEventHandler(this));
             AddEventHandlers(new JBCEventHandler(this));
             AddEventHandlers(new BreakDoorsEventHandler(this));
+            AddEventHandlers(new OtherFunctions(this));
+            AddEventHandlers(new SizeChangeEventHandler(this));
+            AddEventHandlers(new CleanupEventHandler(this));
+            AddEventHandlers(new InstaKillEventHandler(this));
         }
     }
 }

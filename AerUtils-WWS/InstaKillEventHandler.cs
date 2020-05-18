@@ -6,34 +6,31 @@ using WW_SYSTEM.Events;
 
 namespace AerUtils
 {
-    class BreakDoorsEventHandler : IEventHandlerAdminQuery
+    class InstaKillEventHandler : IEventHandlerAdminQuery
     {
         public Plugin plugin;
-        public BreakDoorsEventHandler(Plugin plugin)
+        public InstaKillEventHandler(Plugin plugin)
         {
             this.plugin = plugin;
         }
         public void OnAdminQuery(AdminQueryEvent ev)
         {
-            var utilsenable = plugin.Config.GetBool("aerutils_enable", true);
-            if (!utilsenable) return;
-            string[] array = ev.Query.Split();
-
-            if (ev.Query.ToLower().StartsWith("bd"))
+            if(ev.Query.ToLower().StartsWith("ik") || ev.Query.ToLower().StartsWith("instakill"))
             {
+                var utilsenable = plugin.Config.GetBool("aerutils_enable", true);
                 if (!utilsenable) return;
-                var aerutils_bd = plugin.Config.GetBool("aerutils_breakdoors_enable", true);
-                if (!aerutils_bd) return;
+                string[] array = ev.Query.Split();
+
                 if (array.Length <= 1)
                 {
-                    ev.Output = "AerUtils_BreakDoors#Usage: bd <RemoteAdmin player id>";
+                    ev.Output = "AerUtils_InstaKill#Usage: ik <RemoteAdmin player id>";
                     ev.Successful = true;
                     ev.Handled = true;
                     return;
                 }
                 if (string.IsNullOrEmpty(array[1]))
                 {
-                    ev.Output = "AerUtils_BreakDoors#Usage: bd <RemoteAdmin player id>";
+                    ev.Output = "AerUtils_InstaKill#Usage: ik <RemoteAdmin player id>";
                     ev.Successful = true;
                     ev.Handled = true;
                     return;
@@ -44,7 +41,7 @@ namespace AerUtils
                     {
                         if (!ev.Admin.IsPermitted(PlayerPermissions.PlayersManagement))
                         {
-                            ev.Output = "AerUtils_BreakDoors#Not enough permissions";
+                            ev.Output = "AerUtils_InstaKill#Not enough permissions";
                             ev.Successful = false;
                             ev.Handled = true;
                             return;
@@ -53,7 +50,7 @@ namespace AerUtils
                         {
                             if (array[1].ToLower().Contains("help"))
                             {
-                                ev.Output = "AerUtils_BreakDoors#Usage: bd <RemoteAdmin player id>";
+                                ev.Output = "AerUtils_InstaKill#Usage: ik <RemoteAdmin player id>";
                                 ev.Successful = true;
                                 ev.Handled = true;
                                 return;
@@ -63,27 +60,18 @@ namespace AerUtils
                                 int id = int.Parse(array[1]);
 
                                 Player pl = Server.Round.FindPlayerWithId(id);
-                                if (pl != null && !pl.BreakDoors)
+                                if (pl != null)
                                 {
-                                    pl.BreakDoors = true;
+                                    pl.Kill(DamageTypes.None);
 
-                                    ev.Output = "AerUtils_BreakDoors#Enabled BreakDoors for player " + pl.Nick;
+                                    ev.Output = "AerUtils_InstaKill#Instantly killed player  " + pl.Nick;
                                     ev.Successful = true;
                                     ev.Handled = true;
                                     return;
                                 }
-                                else if (pl != null && pl.BreakDoors)
+                                else if (pl == null)
                                 {
-                                    pl.BreakDoors = false;
-
-                                    ev.Output = "AerUtils_BreakDoors#Disabled BreakDoors for player " + pl.Nick;
-                                    ev.Successful = true;
-                                    ev.Handled = true;
-                                    return;
-                                }
-                                else if(pl == null)
-                                {
-                                    ev.Output = "AerUtils_BreakDoors#Please, use valid player id! Id" + pl + " is invalid";
+                                    ev.Output = "AerUtils_InstaKill#Please, use valid player id! Id" + pl + " is invalid";
                                     ev.Successful = false;
                                     ev.Handled = true;
                                 }
@@ -92,7 +80,7 @@ namespace AerUtils
                     }
                     catch (Exception ex)
                     {
-                        ev.Output = "AerUtils_BreakDoors#Error: " + ex;
+                        ev.Output = "AerUtils_InstaKill#Error: " + ex;
                         ev.Successful = false;
                         ev.Handled = true;
                         return;

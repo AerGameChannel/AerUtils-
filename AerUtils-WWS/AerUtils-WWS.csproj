@@ -52,6 +52,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\WW_SYSTEM References\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp_publicized">
       <HintPath>..\..\LightsOff-WWS\LightsOff-WWS\References\Assembly-CSharp_publicized.dll</HintPath>
     </Reference>
@@ -81,11 +84,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreakDoorsEventHandler.cs" />
+    <Compile Include="CleanupEventHandler.cs" />
+    <Compile Include="InstaKillEventHandler.cs" />
     <Compile Include="JBCEventHandler.cs" />
     <Compile Include="LightsOffEventHandler.cs" />
+    <Compile Include="OtherFunctions.cs" />
     <Compile Include="PersonalBCEventHandler.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SizeChangeEventHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

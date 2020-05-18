@@ -18,9 +18,9 @@ namespace AerUtils
         }
         public void OnAdminQuery(AdminQueryEvent ev)
         {
-            bool utilsenable = plugin.Config.GetBool("aerutils_enable", true);
+            var utilsenable = plugin.Config.GetBool("aerutils_enable", true);
             if (!utilsenable) return;
-            string[] array = ev.Query.Split(new char[]{' '});
+            string[] array = ev.Query.Split();
 
             if (ev.Query.ToLower().StartsWith("pbc"))
             {
@@ -67,7 +67,7 @@ namespace AerUtils
                             }
                             else
                             {
-                                int id = int.Parse(array[1]);
+                                int.TryParse(array[1], out int id);
 
                                 Player pl = Server.Round.FindPlayerWithId(id);
                                 if (pl != null)
@@ -99,7 +99,7 @@ namespace AerUtils
                     }
                     catch (Exception ex)
                     {
-                        ev.Output = "AerUtils_PersonalBC#Error:" + ex;
+                        ev.Output = "AerUtils_PersonalBC#Error: " + ex;
                         ev.Successful = false;
                         ev.Handled = true;
                     }
