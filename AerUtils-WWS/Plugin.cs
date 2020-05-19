@@ -9,7 +9,7 @@ namespace AerUtils
         description = "AerUtils",
         id = "aerutils.plugin",
         configPrefix = "AerUtils",
-        version = "2.0.0",
+        version = "2.0.1",
         WWSYSTEMMajor = 6,
         WWSYSTEMMinor = 3,
         WWSYSTEMRevision = 1
@@ -29,14 +29,14 @@ namespace AerUtils
         }
         public override void Register()
         {
-            AddEventHandlers(new PersonalBCEventHandler(this)); // Loads PersonalBC EventHandler
-            AddEventHandlers(new LightsOffEventHandler(this)); // Loads LightsOff EventHandler
-            AddEventHandlers(new JBCEventHandler(this)); // Loads JoinBC EventHandler
-            AddEventHandlers(new BreakDoorsEventHandler(this)); // Loads BreakDoors EventHandler
-            AddEventHandlers(new OtherFunctions(this)); // Loads OtherFunctions EventHandler
-            AddEventHandlers(new SizeChangeEventHandler(this)); // Loads SizeChange EventHandler
-            AddEventHandlers(new CleanupEventHandler(this)); // Loads Cleanup EventHandler
-            AddEventHandlers(new InstaKillEventHandler(this)); // Loads InstaKill EventHandler
+            AddEventHandlers(new PersonalBCEventHandler(this));
+            AddEventHandlers(new LightsOffEventHandler(this));
+            AddEventHandlers(new JBCEventHandler(this));
+            AddEventHandlers(new BreakDoorsEventHandler(this));
+            AddEventHandlers(new OtherFunctions(this));
+            AddEventHandlers(new SizeChangeEventHandler(this));
+            AddEventHandlers(new CleanupEventHandler(this));
+            AddEventHandlers(new InstaKillEventHandler(this));
         }
     }
 }
