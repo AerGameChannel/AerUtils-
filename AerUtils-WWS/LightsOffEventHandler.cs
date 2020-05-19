@@ -25,18 +25,18 @@ namespace AerUtils
             if (!aerutils_lo) return;
             string[] array = ev.Query.Split();
 
-            if (ev.Query.ToLower().StartsWith("lo") || ev.Query.ToLower().StartsWith("lights"))
+            if (ev.Query.ToLower().StartsWith("lights"))
             {
                 if (array.Length <= 1)
                 {
-                    ev.Output = "AerUtils_LightsOff#Usage: lo/lights <time in seconds>";
+                    ev.Output = "AerUtils_LightsOff#Usage: lights <time in seconds>";
                     ev.Successful = true;
                     ev.Handled = true;
                     return;
                 }
                 if (string.IsNullOrEmpty(array[1]))
                 {
-                    ev.Output = "AerUtils_LightsOff#Usage: lo/lights <time in seconds>";
+                    ev.Output = "AerUtils_LightsOff#Usage: lights <time in seconds>";
                     ev.Successful = true;
                     ev.Handled = true;
                     return;
@@ -45,18 +45,11 @@ namespace AerUtils
                 {
                     try
                     {
-                        if (!ev.Admin.IsPermitted(PlayerPermissions.FacilityManagement))
-                        {
-                            ev.Output = "AerUtils_LightsOff#Not enough permissions";
-                            ev.Successful = false;
-                            ev.Handled = true;
-                            return;
-                        }
                         if (array.Length > 1)
                         {
                             if (array[1].ToLower().Contains("help"))
                             {
-                                ev.Output = "AerUtils_LightsOff#Usage: lo <time in seconds>";
+                                ev.Output = "AerUtils_LightsOff#Usage: lights <time in seconds>";
                                 ev.Successful = true;
                                 ev.Handled = true;
                                 return;
@@ -65,7 +58,7 @@ namespace AerUtils
                             {
                                 int.TryParse(array[1], out int lotime);
 
-                                Server.Round.EnableFlickering(lotime, false); // Turn off the lights
+                                Server.Round.EnableFlickering(lotime, false);
 
                                 ev.Output = "AerUtils_LightsOff#Turned off the lights ";
                                 ev.Successful = true;
@@ -82,7 +75,7 @@ namespace AerUtils
                     }
                     catch (Exception ex)
                     {
-                        ev.Output = "LightsOff#Error: " + ex;
+                        ev.Output = "AerUtils_LightsOff#Error: " + ex;
                         ev.Successful = false;
                         ev.Handled = true;
                         return;
@@ -93,7 +86,7 @@ namespace AerUtils
         public void OnRoundStart(RoundStartEvent ev)
         {
             var randomlo = plugin.Config.GetBool("aerutils_randomlo_enable", true);
-            if (randomlo)
+            if (!randomlo) return;
             {
                 var utilsenable = plugin.Config.GetBool("aerutils_enable", true);
                 var aerutils_lo = plugin.Config.GetBool("aerutils_lo_enable", true);

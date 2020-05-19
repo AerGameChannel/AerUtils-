@@ -15,7 +15,7 @@ namespace AerUtils
         }
         public void OnAdminQuery(AdminQueryEvent ev)
         {
-            if(ev.Query.ToLower().StartsWith("ik") || ev.Query.ToLower().StartsWith("instakill"))
+            if(ev.Query.ToLower().StartsWith("instakill"))
             {
                 var utilsenable = plugin.Config.GetBool("aerutils_enable", true);
                 if (!utilsenable) return;
@@ -23,14 +23,14 @@ namespace AerUtils
 
                 if (array.Length <= 1)
                 {
-                    ev.Output = "AerUtils_InstaKill#Usage: ik <RemoteAdmin player id>";
+                    ev.Output = "AerUtils_InstaKill#Usage: instakill <RemoteAdmin player id>";
                     ev.Successful = true;
                     ev.Handled = true;
                     return;
                 }
                 if (string.IsNullOrEmpty(array[1]))
                 {
-                    ev.Output = "AerUtils_InstaKill#Usage: ik <RemoteAdmin player id>";
+                    ev.Output = "AerUtils_InstaKill#Usage: instakill <RemoteAdmin player id>";
                     ev.Successful = true;
                     ev.Handled = true;
                     return;
@@ -39,18 +39,11 @@ namespace AerUtils
                 {
                     try
                     {
-                        if (!ev.Admin.IsPermitted(PlayerPermissions.PlayersManagement))
-                        {
-                            ev.Output = "AerUtils_InstaKill#Not enough permissions";
-                            ev.Successful = false;
-                            ev.Handled = true;
-                            return;
-                        }
                         if (array.Length > 0)
                         {
                             if (array[1].ToLower().Contains("help"))
                             {
-                                ev.Output = "AerUtils_InstaKill#Usage: ik <RemoteAdmin player id>";
+                                ev.Output = "AerUtils_InstaKill#Usage: instakill <RemoteAdmin player id>";
                                 ev.Successful = true;
                                 ev.Handled = true;
                                 return;
@@ -62,7 +55,7 @@ namespace AerUtils
                                 Player pl = Server.Round.FindPlayerWithId(id);
                                 if (pl != null)
                                 {
-                                    pl.Kill(DamageTypes.None); // Kill player instantly
+                                    pl.Kill(DamageTypes.None);
 
                                     ev.Output = "AerUtils_InstaKill#Instantly killed player  " + pl.Nick;
                                     ev.Successful = true;

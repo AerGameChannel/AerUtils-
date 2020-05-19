@@ -42,13 +42,6 @@ namespace AerUtils
                 {
                     try
                     {
-                        if (!ev.Admin.IsPermitted(PlayerPermissions.Broadcasting))
-                        {
-                            ev.Output = "AerUtils_PersonalBC#Not enough permissions";
-                            ev.Successful = false;
-                            ev.Handled = true;
-                            return;
-                        }
                         if (array.Length > 0)
                         {
                             if (array.Length > 0)
@@ -75,7 +68,7 @@ namespace AerUtils
                                     IEnumerable<string> thing = array.Skip(3);
                                     string msg = "";
                                     foreach (string s in thing) msg += $"{s} ";
-                                    pl.PersonalBroadcast(msg, Convert.ToUInt32(array[2]), false); // Send personal broadcast to player
+                                    pl.PersonalBroadcast(msg, Convert.ToUInt32(array[2]), false);
 
                                     ev.Output = "AerUtils_PersonalBC#Done!";
                                     ev.Successful = true;
