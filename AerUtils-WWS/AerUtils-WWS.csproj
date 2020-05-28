@@ -83,6 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API.cs" />
     <Compile Include="BreakDoorsEventHandler.cs" />
     <Compile Include="CleanupEventHandler.cs" />
     <Compile Include="InstaKillEventHandler.cs" />

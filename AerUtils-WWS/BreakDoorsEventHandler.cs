@@ -19,7 +19,7 @@ namespace AerUtils
             if (!utilsenable) return;
             string[] array = ev.Query.Split();
 
-            if (ev.Query.ToLower().StartsWith("breakdoors"))
+            if (ev.Query.ToLower() == "breakdoors")
             {
                 if (!utilsenable) return;
                 var aerutils_bd = plugin.Config.GetBool("aerutils_breakdoors_enable", true);
@@ -44,7 +44,7 @@ namespace AerUtils
                     {
                         if (array.Length > 0)
                         {
-                            if (array[1].ToLower().Contains("help"))
+                            if (array[1].ToLower() == "help")
                             {
                                 ev.Output = "AerUtils_BreakDoors#Usage: breakdoors <RemoteAdmin player id>";
                                 ev.Successful = true;

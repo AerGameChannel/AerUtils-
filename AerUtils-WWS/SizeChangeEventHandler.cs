@@ -20,7 +20,7 @@ namespace AerUtils
         }
         public void OnAdminQuery(AdminQueryEvent ev)
         {
-            if (ev.Query.ToLower().StartsWith("size"))
+            if (ev.Query.ToLower() == "size")
             {
                 try
                 {
@@ -53,7 +53,7 @@ namespace AerUtils
                         }
                         if (array.Length > 0)
                         {
-                            if (array[1].ToLower().Contains("help"))
+                            if (array[1].ToLower() == "help")
                             {
                                 ev.Output = "AerUtils_Size#Usage: size <RA player id> <x> <y> <z>";
                                 ev.Successful = true;

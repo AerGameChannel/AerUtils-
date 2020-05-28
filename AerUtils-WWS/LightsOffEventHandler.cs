@@ -25,7 +25,7 @@ namespace AerUtils
             if (!aerutils_lo) return;
             string[] array = ev.Query.Split();
 
-            if (ev.Query.ToLower().StartsWith("lights"))
+            if (ev.Query.ToLower() == "lights")
             {
                 if (array.Length <= 1)
                 {
@@ -47,7 +47,7 @@ namespace AerUtils
                     {
                         if (array.Length > 1)
                         {
-                            if (array[1].ToLower().Contains("help"))
+                            if (array[1].ToLower() == "help")
                             {
                                 ev.Output = "AerUtils_LightsOff#Usage: lights <time in seconds>";
                                 ev.Successful = true;

@@ -9,7 +9,7 @@ namespace AerUtils
         description = "AerUtils",
         id = "aerutils.plugin",
         configPrefix = "AerUtils",
-        version = "2.0.1",
+        version = "2.0.2",
         WWSYSTEMMajor = 6,
         WWSYSTEMMinor = 3,
         WWSYSTEMRevision = 1

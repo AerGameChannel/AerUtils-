@@ -22,7 +22,7 @@ namespace AerUtils
             if (!utilsenable) return;
             string[] array = ev.Query.Split();
 
-            if (ev.Query.ToLower().StartsWith("killall"))
+            if (ev.Query.ToLower() == "killall")
             {
                 try
                 {

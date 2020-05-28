@@ -26,7 +26,7 @@ namespace AerUtils
             if (!utilsenable) return;
             string[] array = ev.Query.Split();
 
-            if (ev.Query.ToLower().StartsWith("cleanup"))
+            if (ev.Query.ToLower() == "cleanup")
             {
                 if (array.Length <= 1)
                 {
@@ -58,14 +58,14 @@ namespace AerUtils
                         {
                             if (array.Length > 1)
                             {
-                                if (array[1].ToLower().Contains("help"))
+                                if (array[1].ToLower() == "help")
                                 {
                                     ev.Output = "AerUtils_Cleanup#Usage: cleanup <ragdolls/items/all>";
                                     ev.Successful = true;
                                     ev.Handled = true;
                                     return;
                                 }
-                                if (array[1].ToLower().Contains("ragdoll") || array[1].ToLower().Contains("ragdolls") || array[1].ToLower().Contains("r"))
+                                if (array[1].ToLower() == "ragdoll" || array[1].ToLower() == "ragdolls" || array[1].ToLower() == "r")
                                 {
                                     foreach (Ragdoll doll in Object.FindObjectsOfType<Ragdoll>())
                                     {
@@ -78,7 +78,7 @@ namespace AerUtils
                                     return;
 
                                 }
-                                if (array[1].ToLower().Contains("item") || array[1].ToLower().Contains("items") || array[1].ToLower().Contains("i"))
+                                if (array[1].ToLower() == "item" || array[1].ToLower() == "items" || array[1].ToLower() == "i")
                                 {
                                     foreach (Pickup item in Object.FindObjectsOfType<Pickup>())
                                     {

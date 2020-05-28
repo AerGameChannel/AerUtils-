@@ -15,7 +15,7 @@ namespace AerUtils
         }
         public void OnAdminQuery(AdminQueryEvent ev)
         {
-            if(ev.Query.ToLower().StartsWith("instakill"))
+            if(ev.Query.ToLower() == "instakill")
             {
                 var utilsenable = plugin.Config.GetBool("aerutils_enable", true);
                 if (!utilsenable) return;
@@ -41,7 +41,7 @@ namespace AerUtils
                     {
                         if (array.Length > 0)
                         {
-                            if (array[1].ToLower().Contains("help"))
+                            if (array[1].ToLower() == "help")
                             {
                                 ev.Output = "AerUtils_InstaKill#Usage: instakill <RemoteAdmin player id>";
                                 ev.Successful = true;

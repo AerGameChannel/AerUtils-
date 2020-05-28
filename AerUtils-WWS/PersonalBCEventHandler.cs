@@ -22,7 +22,7 @@ namespace AerUtils
             if (!utilsenable) return;
             string[] array = ev.Query.Split();
 
-            if (ev.Query.ToLower().StartsWith("pbc"))
+            if (ev.Query.ToLower() == "pbc")
             {
                 if (array.Length <= 1)
                 {
@@ -51,7 +51,7 @@ namespace AerUtils
                                 ev.Handled = true;
                                 return;
                             }
-                            if (array[1].ToLower().Contains("help"))
+                            if (array[1].ToLower() == "help")
                             {
                                 ev.Output = "AerUtils_PersonalBC#Usage: pbc <RA player id> <time in seconds> <text>";
                                 ev.Successful = true;
